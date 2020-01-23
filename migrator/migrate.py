@@ -3,6 +3,7 @@ import binascii
 import psycopg2 
 import unicodedata
 
+from getpass import getpass
 from Crypto.Cipher import Blowfish
 
 DB_HOST = "localhost"
@@ -17,7 +18,7 @@ def getDBConnectionInfo():
     DB_PORT = raw_input("Enter the database port number (default " + DB_PORT + "): ") or DB_PORT
     DB_NAME = raw_input("Enter the database name (default " + DB_NAME + "): ") or DB_NAME
     DB_USERNAME = raw_input("Enter the database user name (default " + DB_USERNAME + "): ") or DB_USERNAME
-    DB_USER_PASSWORD = raw_input("Enter the database user password: ")
+    DB_USER_PASSWORD = getpass("Enter the database user password: ")
     print
 
 def getEncryptedPasswordRows(conn):
