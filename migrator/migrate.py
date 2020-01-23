@@ -104,7 +104,6 @@ def main():
                 else:
                     print("Plaintext does not match hash. Error expected to have occurred.")
                     numErrors += 1
-                    previouslyMigratedRows += 1
             else:
                 print("Password already migrated, ignoring")
                 previouslyMigratedRows += 1
